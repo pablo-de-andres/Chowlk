@@ -1,5 +1,5 @@
-from source.chowlk.geometry import get_corners, get_corners_rect_child
-from source.chowlk.finding import create_label
+from chowlk.geometry import get_corners, get_corners_rect_child
+from chowlk.finding import create_label
 import copy
 
 

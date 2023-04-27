@@ -1,5 +1,5 @@
 import tempfile
-from source.chowlk.anonymousClass import *
+from chowlk.anonymousClass import *
 
 def get_ttl_template(namespaces, prefixes_fonded, errors):
 
