@@ -11,6 +11,7 @@ __pycache__/
 *.log
 logs
 tmp
-source/*egg-info
+*egg-info
 dist
+build
 test-data
