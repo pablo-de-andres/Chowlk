@@ -1,7 +1,10 @@
-import unittest
-import sys
 import os
+import sys
+
 from chowlk.converter import converter
+
+# import unittest
+
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -14,10 +17,9 @@ def generate_ontologies():
     for filename in os.listdir(inputs_path):
         input_filepath = os.path.join(inputs_path, filename)
         output_filepath = os.path.join(outputs_path, filename[:-3] + "ttl")
-        log_filepath = os.path.join(outputs_path, filename[:-4] + "_log.txt")
         print("\nGenerating ontology (output) " + filename + "\n")
         converter(
-            inputs_path=input_filepath,
+            diagram_path=input_filepath,
             output_path=output_filepath,
             type="ontology",
             format="ttl",
@@ -71,9 +73,9 @@ def test():
 def compare_ontologies(o1, o2):
     # We want to compare two fields in order to find
     # the first line where they are not equals
-    file1 = open(o1, "r")
+    file1 = open(o1)
     linesFile1 = file1.readlines()
-    file2 = open(o2, "r")
+    file2 = open(o2)
     linesFile2 = file2.readlines()
     equals = True
     # The files can have different length
@@ -107,8 +109,8 @@ def compare_ontologies(o1, o2):
 
 
 def compare_logs(l1, l2):
-    file1 = open(l1, "r")
-    file2 = open(l2, "r")
+    file1 = open(l1)
+    file2 = open(l2)
     passed = file1.read() == file2.read()
     file1.close()
     file2.close()

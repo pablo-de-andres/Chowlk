@@ -1,9 +1,12 @@
-![Logo](https://github.com/oeg-upm/Chowlk/blob/webservice/resources/logo.png)
+# Chowlk Converter - Unofficial fork
 
-# Chowlk Converter
+**IMPORTANT NOTICE**: This is an unofficial temporary fork of [Chowlk](https://github.com/oeg-upm/Chowlk). Please refer to the original repository.
+
+![Logo](./resources/logo.png)
+
 Tool to transform ontology conceptualizations made with diagrams.net into OWL code.
 
-The conceptualizations should follow the <a href="https://chowlk.linkeddata.es/notation.html">Chowlk visual notation</a>. Please visit the specification for more details.
+The conceptualizations should follow the [Chowlk visual notation](https://chowlk.linkeddata.es/notation.html). Please visit the specification for more details.
 
 Citing Chowlk: If you used Chowlk in your work, please cite the [ESWC paper](https://2022.eswc-conferences.org/wp-content/uploads/2022/05/paper_90_Chavez-Feria_et_al.pdf):
 
@@ -33,24 +36,19 @@ pages="338--352"
 
 You have several options to use this tool.
 
-### 1. The web application:
+### 1. The web application
 
-1. Go to https://chowlk.linkeddata.es/ web application.
-2. Download the Chowlk template.
-  
-  * Complete version of the template:
-    https://github.com/oeg-upm/chowlk_spec/blob/master/resources/chowlk-library-complete.xml
+1. Go to the [chowlk.linkeddata.es](https://chowlk.linkeddata.es/) web application.
+1. Download the Chowlk template.
+     * Complete version of the template [here](https://github.com/oeg-upm/chowlk_spec/blob/master/resources/chowlk-library-complete.xml)
+     * Lightweight version of the template [here](https://github.com/oeg-upm/chowlk_spec/blob/master/resources/chowlk-library-lightweight.xml)
+1. In diagrams.net go to File > Open Library from > Device ...
+1. Select the library downloaded.
+1. Make your conceptualization using the blocks that will appear on the side bar.
+1. Download the diagram in xml format.
+1. Drag and drop your diagram in the Service dropping area and download your TTL file.
 
-  * Lightweight version of the template:
-    https://github.com/oeg-upm/chowlk_spec/blob/master/resources/chowlk-library-lightweight.xml
-     
-3. In diagrams.net go to File > Open Library from > Device ...
-4. Select the library downloaded.
-5. Make your conceptualization using the blocks that will appear on the side bar.
-6. Download the diagram in xml format.
-7. Drag and drop your diagram in the Service dropping area and download your TTL file.
-
-### 2. The API:
+### 2. The API
 
 The following command line will return the ontology in Turtle format.
 
@@ -88,33 +86,37 @@ The service will return the following dictionary:
 }
 ```
 
+### 3. Running it from source
 
-### 3. Running it from source:
+### Copy the project
 
-### Copy the project:
 ```bash
 git clone https://github.com/oeg-upm/Chowlk.git
 git checkout webservice
 ```
 
-### Requirements:
+### Requirements
+
 ```bash
 pip install -r requirements.txt
 ```
 
-### To convert a diagram:
+### To convert a diagram
 
 * If the desired format is ttl:
+
 ```bash
 python converter.py path/to/diagram.xml output/path/ontology.ttl --type ontology --format ttl
 ```
 
 * If the desired format is rdf/xml:
+
 ```bash
 python converter.py path/to/diagram.xml output/path/ontology.xml --type ontology --format xml
 ```
 
-### To run the app locally:
+### To run the app locally
+
 ```bash
 python app.py
 ```
@@ -123,10 +125,9 @@ python app.py
 
 * Chávez-Feria, S., García-Castro, R., Poveda-Villalón, M. (2022). Chowlk: from UML-Based Ontology Conceptualizations to OWL. In: , et al. The Semantic Web. ESWC 2022. Lecture Notes in Computer Science, vol 13261. Springer, Cham. https://doi.org/10.1007/978-3-031-06981-9_20
 
-* Chávez-Feria, S., García-Castro, R., Poveda-Villalón, M. (2021). <i>Converting UML-based ontology conceptualizations to OWL with Chowlk. In ESWC (Poster and Demo Track)</i>
-
-
+* Chávez-Feria, S., García-Castro, R., Poveda-Villalón, M. (2021). _Converting UML-based ontology conceptualizations to OWL with Chowlk. In ESWC (Poster and Demo Track)_
 
 ## Contact
+
 * Serge Chávez-Feria (serge.chavez.feria@upm.es)
 * Maria Poveda-Villalón (mpoveda@fi.upm.es)
