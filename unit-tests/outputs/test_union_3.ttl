@@ -24,4 +24,3 @@ ns:Individual1 a owl:NamedIndividual .
 ns:Individual2 a owl:NamedIndividual .
 
 ns:Individual3 a owl:NamedIndividual .
-

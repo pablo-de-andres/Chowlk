@@ -9,4 +9,3 @@ ns: a owl:Ontology ;
 ns:datatypeProperty a owl:DatatypeProperty,
         owl:ObjectProperty ;
     rdfs:label "datatype property" .
-

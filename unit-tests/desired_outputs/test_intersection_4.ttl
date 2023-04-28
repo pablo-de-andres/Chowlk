@@ -24,4 +24,3 @@ ns:Class4 a owl:Class ;
 
 ns:Class5 a owl:Class ;
     rdfs:label "Class5" .
-

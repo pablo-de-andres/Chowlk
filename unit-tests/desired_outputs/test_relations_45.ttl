@@ -9,4 +9,3 @@ ns: a owl:Ontology ;
 ns:objectProperty1 a owl:ObjectProperty,
         owl:SymmetricProperty ;
     rdfs:label "object property1" .
-

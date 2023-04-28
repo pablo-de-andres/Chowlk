@@ -1,22 +1,22 @@
-import xml.etree.ElementTree as ET
-import re
 import base64
-from urllib.parse import unquote
+import re
+import xml.etree.ElementTree as ET
 import zlib
+from urllib.parse import unquote
+
 from bs4 import BeautifulSoup
 
-def create_label(uri, type):
 
+def create_label(uri, type):
     uppers_pos = []
     for i, char in enumerate(uri):
         if char.isupper():
             uppers_pos.append(i)
     uppers_pos.insert(0, 0) if 0 not in uppers_pos else uppers_pos
     words = []
-    
+
     for i, current_pos in enumerate(uppers_pos):
-        
-        if i+1 < len(uppers_pos):
+        if i + 1 < len(uppers_pos):
             next_pos = uppers_pos[i + 1]
             word = uri[current_pos:next_pos]
         else:
@@ -31,8 +31,17 @@ def create_label(uri, type):
 
 
 def clean_html_tags(text, metadata=False):
-
-    html_tags = ["<u>", "</u>", "<b>", "</b>", "(<span .[^>]+\>)", "(<font .[^>]+\>)", "</font>", "<span>", "</span>"]
+    html_tags = [
+        "<u>",
+        "</u>",
+        "<b>",
+        "</b>",
+        r"(<span .[^>]+\>)",
+        r"(<font .[^>]+\>)",
+        "</font>",
+        "<span>",
+        "</span>",
+    ]
 
     for tag in html_tags:
         text = re.sub(tag, "", text)
@@ -43,7 +52,6 @@ def clean_html_tags(text, metadata=False):
 
 
 def read_drawio_xml(diagram_path):
-
     tree = ET.parse(diagram_path)
     mxfile = tree.getroot()
 
@@ -56,7 +64,7 @@ def read_drawio_xml(diagram_path):
         diagram = mxfile[0]
         compressed_mxGraphModel = diagram.text
         coded_xml = base64.b64decode(compressed_mxGraphModel)
-        xml_string = unquote(zlib.decompress(coded_xml, -15).decode('utf8'))
+        xml_string = unquote(zlib.decompress(coded_xml, -15).decode("utf8"))
         mxGraphModel = ET.fromstring(xml_string)
         root = mxGraphModel[0]
 
@@ -74,7 +82,6 @@ def read_drawio_xml(diagram_path):
 
 
 def find_prefixes(concepts, relations, attribute_blocks, individuals):
-
     prefixes = []
 
     for id, concept in concepts.items():
@@ -102,17 +109,17 @@ def find_prefixes(concepts, relations, attribute_blocks, individuals):
 
     return prefixes
 
-def clean_uri(uri):
 
-    uri = re.sub("\(([0-9][^)]+)\)", "", uri).strip()
-    uri = re.sub("\(([^)]+)\)", "", uri).strip()
-    uri = re.sub("\(all\)", "", uri).strip()
-    uri = re.sub("\(some\)", "", uri).strip()
-    uri = re.sub("\(∀\)", "", uri).strip()
-    uri = re.sub("\(∃\)", "", uri).strip()
-    uri = re.sub("\(F\)", "", uri).strip()
-    uri = re.sub("\(IF\)", "", uri).strip()
-    uri = re.sub("\(S\)", "", uri).strip()
-    uri = re.sub("\(T\)", "", uri).strip()
+def clean_uri(uri):
+    uri = re.sub(r"\(([0-9][^)]+)\)", "", uri).strip()
+    uri = re.sub(r"\(([^)]+)\)", "", uri).strip()
+    uri = re.sub(r"\(all\)", "", uri).strip()
+    uri = re.sub(r"\(some\)", "", uri).strip()
+    uri = re.sub(r"\(∀\)", "", uri).strip()
+    uri = re.sub(r"\(∃\)", "", uri).strip()
+    uri = re.sub(r"\(F\)", "", uri).strip()
+    uri = re.sub(r"\(IF\)", "", uri).strip()
+    uri = re.sub(r"\(S\)", "", uri).strip()
+    uri = re.sub(r"\(T\)", "", uri).strip()
 
     return uri

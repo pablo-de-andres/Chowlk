@@ -11,4 +11,3 @@ ns:Class a owl:Class ;
 
 ns:datatypeProperty a owl:DatatypeProperty ;
     rdfs:label "datatype property" .
-

@@ -1,11 +1,13 @@
-import tempfile
 import sys
-from chowlk.finding import *
-from chowlk.associations import *
-from chowlk.writer import *
-from chowlk.utils import *
-from chowlk.anonymousClass import *
+import tempfile
+
 import rdflib
+
+from chowlk.anonymousClass import *
+from chowlk.associations import *
+from chowlk.finding import *
+from chowlk.utils import *
+from chowlk.writer import *
 
 
 def transform_ontology(root):
@@ -176,7 +178,7 @@ def transform_ontology(root):
     prefixes_identified = find_prefixes(concepts, relations, attribute_blocks, individuals)
 
     individuals = individual_type_identification_rdf(individuals, concepts, relations)
-    
+
     associations_individuals = individual_relation_association(individuals, relations)
     associations_individuals = individual_attribute_association(associations_individuals, values, relations)
     file, onto_prefix, onto_uri, new_namespaces = get_ttl_template(namespaces, prefixes_identified)

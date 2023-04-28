@@ -13,4 +13,3 @@ ns:Class1 a owl:Class ;
             owl:oneOf ( ns:Individual1 ) ] .
 
 ns:Individual1 a owl:NamedIndividual .
-

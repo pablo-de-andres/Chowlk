@@ -20,4 +20,3 @@ ns:objectProperty a owl:InverseFunctionalProperty,
 
 ns:Class2 a owl:Class ;
     rdfs:label "Class2" .
-

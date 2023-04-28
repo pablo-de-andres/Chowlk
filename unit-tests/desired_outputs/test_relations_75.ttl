@@ -16,4 +16,3 @@ ns:Individual1 a owl:NamedIndividual .
 
 ns:objectProperty a owl:ObjectProperty ;
     rdfs:label "object property" .
-

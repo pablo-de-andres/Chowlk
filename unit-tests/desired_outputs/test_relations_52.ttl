@@ -10,4 +10,3 @@ ns:objectProperty a owl:FunctionalProperty,
         owl:ObjectProperty,
         owl:SymmetricProperty ;
     rdfs:label "object property" .
-

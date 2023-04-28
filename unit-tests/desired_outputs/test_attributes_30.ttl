@@ -10,4 +10,3 @@ ns: a owl:Ontology ;
 ns:datatypeProperty a owl:DatatypeProperty ;
     rdfs:label "datatype property" ;
     rdfs:range xsd:datatype .
-

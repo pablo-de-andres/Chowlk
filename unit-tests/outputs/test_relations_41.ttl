@@ -12,4 +12,3 @@ ns:objectProperty2 a owl:ObjectProperty ;
 
 ns:objectProperty1 a owl:ObjectProperty ;
     rdfs:label "object property1" .
-

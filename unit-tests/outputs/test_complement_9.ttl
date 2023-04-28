@@ -29,7 +29,7 @@
 ns:Class1 rdf:type owl:Class ;
 	rdfs:label "Class1" ;
  ;	owl:equivalentClass [ rdf:type owl:Class ;
-	owl:complementOf 
+	owl:complementOf
 						] .
 
 #################################################################
@@ -39,4 +39,3 @@ ns:Class1 rdf:type owl:Class ;
 #################################################################
 #    General Axioms
 #################################################################
-

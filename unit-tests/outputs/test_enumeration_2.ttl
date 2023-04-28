@@ -18,4 +18,3 @@ ns:Class2 a owl:Class ;
 ns:Individual2 a owl:NamedIndividual .
 
 ns:Individual3 a owl:NamedIndividual .
-

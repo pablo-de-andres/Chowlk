@@ -24,4 +24,3 @@ ns:objectProperty2 a owl:ObjectProperty ;
 
 ns:Class2 a owl:Class ;
     rdfs:label "Class2" .
-

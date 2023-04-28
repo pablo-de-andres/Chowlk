@@ -17,4 +17,3 @@ ns:datatypeProperty1 a owl:DatatypeProperty ;
     rdfs:label "datatype property1" ;
     rdfs:domain ns:Class1 ;
     rdfs:range xsd:datatype .
-

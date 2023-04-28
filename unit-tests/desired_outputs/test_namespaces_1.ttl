@@ -11,4 +11,3 @@ ns1:Class1 a owl:Class ;
 
 ns1:Class2 a owl:Class ;
     rdfs:label "Class2" .
-

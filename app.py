@@ -1,13 +1,13 @@
-import os
-import flask
 import copy
-from flask import request, jsonify
+import os
+
+import flask
+from flask import jsonify, request
 from flask_cors import CORS
 
 from chowlk.transformations import transform_ontology
 from chowlk.utils import read_drawio_xml
 from config import config
-
 
 config_name = os.getenv("APP_MODE", "development")
 

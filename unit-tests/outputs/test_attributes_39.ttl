@@ -4,4 +4,3 @@
 
 ns: a owl:Ontology ;
     dc:description "Ontology code created by Chowlk" .
-

@@ -15,4 +15,3 @@ ns:datatypeProperty2 a owl:DatatypeProperty ;
 
 ns:datatypeProperty1 a owl:DatatypeProperty ;
     rdfs:label "datatype property1" .
-

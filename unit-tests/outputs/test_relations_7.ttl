@@ -23,4 +23,3 @@ ns:objectProperty a owl:ObjectProperty ;
     rdfs:label "object property" ;
     rdfs:domain ns:Class1 ;
     rdfs:range ns:Class2 .
-

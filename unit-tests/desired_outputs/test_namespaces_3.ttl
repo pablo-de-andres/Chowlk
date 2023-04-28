@@ -12,4 +12,3 @@ ns1: a owl:Ontology ;
 
 ns1:Class1 a owl:Class ;
     rdfs:label "Class1>" .
-
